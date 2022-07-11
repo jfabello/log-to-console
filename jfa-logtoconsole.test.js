@@ -1,0 +1,1 @@
+const logger = require("./jfa-logtoconsole.js");

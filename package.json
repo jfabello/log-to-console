@@ -1,0 +1,29 @@
+{
+	"name": "@jfabello/logtoconsole",
+	"version": "0.0.1",
+	"description": "Console logger with coloring and configurable log levels.",
+	"license": "GPL-3.0-only",
+	"main": "jfa-logtoconsole.js",
+	"author": {
+		"name": "Juan F. Abello",
+		"email": "juan@jfabello.com"
+	},
+	"keywords": [
+		"log",
+		"console",
+		"colors",
+		"coloring"
+	],
+	"scripts": {
+		"test": "jest --verbose"
+	},
+	"engines": {
+		"node": ">=16"
+	},
+	"dependencies": {
+		"chalk": "4"
+	},
+	"devDependencies": {
+		"jest": "28"
+	}
+}
