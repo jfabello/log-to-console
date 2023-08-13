@@ -1,0 +1,38 @@
+/**
+ * @module logtoconsole-tests
+ * @description Console logger tests.
+ * @license GPL-3.0-only
+ * @author Juan F. Abello <juan@jfabello.com>
+ */
+
+// Sets strict mode
+"use strict";
+
+// Module imports
+const ConsoleLogger = require("./logToConsole.js");
+
+// Creates a new console logger instance
+const logToConsole = new ConsoleLogger(ConsoleLogger.DEBUG);
+
+// Writes several messages to the console.
+logToConsole.debug("This is a debug message.");
+logToConsole.same("This is the continuation of a debug message.");
+logToConsole.info("This is an info message.");
+logToConsole.same("This is the continuation of an info message.");
+logToConsole.warning("This is a warning message.");
+logToConsole.same("This is the continuation of a warning message.");
+logToConsole.error("This is an error message.");
+logToConsole.same("This is the continuation of an error message.");
+
+// Sets the console logger instance log level to WARNING
+logToConsole.logLevel = ConsoleLogger.WARNING;
+
+// Writes several messages to the console.
+logToConsole.debug("This is a debug message.");
+logToConsole.same("This is the continuation of a debug message.");
+logToConsole.info("This is an info message.");
+logToConsole.same("This is the continuation of an info message.");
+logToConsole.warning("This is a warning message.");
+logToConsole.same("This is the continuation of a warning message.");
+logToConsole.error("This is an error message.");
+logToConsole.same("This is the continuation of an error message.");
