@@ -59,7 +59,7 @@ class ConsoleLogger {
 	 * @param {number} [logLevel=1] The desired console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
 	 */
 	constructor(logLevel = 1) {
-		this.logLevel = logLevel;
+		this.#logLevel = logLevel;
 	}
 
 	/**
