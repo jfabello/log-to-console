@@ -1,0 +1,30 @@
+{
+	"name": "@jfabello/log-to-console",
+	"version": "1.0.0",
+	"description": "Console logger with coloring and configurable log levels for Node.js.",
+	"keywords": [
+		"log",
+		"console",
+		"colors",
+		"coloring"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Juan F. Abello",
+		"email": "juan@jfabello.com"
+	},
+	"main": "src/log-to-console.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jfabello/log-to-console.git"
+	},
+	"scripts": {
+		"test": "node src/log-to-console.test.js"
+	},
+	"dependencies": {
+		"chalk": "^4"
+	},
+	"engines": {
+		"node": ">=18"
+	}
+}
