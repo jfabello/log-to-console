@@ -2,9 +2,20 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 ## Table of Contents
 
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Basic Usage](#basic-usage)
+  - [Using Multiple Message Types](#using-multiple-message-types)
+  - [Changing the Log Level](#changing-the-log-level)
+- [The `ConsoleLogger` Class](#the-consolelogger-class)
+  - [Static Properties](#static-properties)
+  - [Instance Properties](#instance-properties)
+  - [Instance Methods](#instance-methods)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
@@ -33,7 +44,7 @@ logToConsole.info("This is an info message.");
 logToConsole.same("This is the continuation of the info message above.");
 ```
 
-### Usign Multiple Message Types
+### Using Multiple Message Types
 
 ```javascript
 const ConsoleLogger = require('@jfabello/log-to-console');
