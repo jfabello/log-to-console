@@ -1,6 +1,6 @@
 /**
+ * Console logger with coloring and configurable log levels for Node.js.
  * @module jfabello/log-to-console
- * @description Console logger with coloring and configurable log levels for Node.js.
  * @license MIT
  * @author Juan F. Abello <juan@jfabello.com>
  */
@@ -12,60 +12,61 @@
 const chalk = require("chalk");
 
 /**
- * @description Console logger with coloring and configurable log levels.
+ * Console logger with coloring and configurable log levels.
+ * @class ConsoleLogger
  */
 class ConsoleLogger {
 	// Private instance variables
-	#logLevel = null;
-	#lastLogFunction = null;
+	/** @type {number} */ #logLevel = null;
+	/** @type {string} */ #lastLogFunction = null;
 
 	/**
+	 * Read-only constant representing the debug logging level (4).
 	 * @static
 	 * @type {number}
-	 * @description Read-only constant representing the debug logging level (4).
 	 */
 	static get DEBUG() {
 		return 4;
 	}
 
 	/**
+	 * Read-only constant representing the information logging level (3).
 	 * @static
 	 * @type {number}
-	 * @description Read-only constant representing the information logging level (3).
 	 */
 	static get INFO() {
 		return 3;
 	}
 
 	/**
+	 * Read-only constant representing the warning logging level (2).
 	 * @static
 	 * @type {number}
-	 * @description Read-only constant representing the warning logging level (2).
 	 */
 	static get WARNING() {
 		return 2;
 	}
 
 	/**
+	 * Read-only constant representing the error logging level (1).
 	 * @static
 	 * @type {number}
-	 * @description Read-only constant representing the error logging level (1).
 	 */
 	static get ERROR() {
 		return 1;
 	}
 
 	/**
+	 * Read-only constant representing the no logging level (0).
 	 * @static
 	 * @type {number}
-	 * @description Read-only constant representing the no logging level (0).
 	 */
 	static get NO_LOGGING() {
 		return 0;
 	}
 
 	/**
-	 * @description Creates a new instance of the console logger.
+	 * Creates a new instance of the console logger.
 	 * @constructor
 	 * @param {number} [logLevel=1] The desired console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
 	 * @throws {TypeError} If the provided log level is not an integer.
@@ -82,7 +83,7 @@ class ConsoleLogger {
 	}
 
 	/**
-	 * @description Gets the current console logger instance log level.
+	 * Gets the current console logger instance log level.
 	 * @returns {number} The current console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
 	 */
 	get logLevel() {
@@ -90,7 +91,7 @@ class ConsoleLogger {
 	}
 
 	/**
-	 * @description Sets the new console logger instance log level.
+	 * Sets the new console logger instance log level.
 	 * @param {number} newLogLevel The desired new console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
 	 * @throws {TypeError} If the new log level is not an integer.
 	 * @throws {RangeError} If the new log level is not between 0 and 4.
@@ -107,10 +108,10 @@ class ConsoleLogger {
 	}
 
 	/**
-	 * @description Logs a debug message to the console if the log level is set to DEBUG or higher.
+	 * Logs a debug message to the console if the log level is set to DEBUG or higher.
 	 * @param {string} message The debug message. Must be a string.
 	 * @param {...any} rest Extra parameters.
-	 * @returns {this} The console logger instance.
+	 * @returns {ConsoleLogger} The console logger instance.
 	 * @throws {TypeError} If the message is not a string.
 	 */
 
@@ -127,10 +128,10 @@ class ConsoleLogger {
 	}
 
 	/**
-	 * @description Logs an information message to the console if the log level is set to INFO or higher.
+	 * Logs an information message to the console if the log level is set to INFO or higher.
 	 * @param {string} message The information message. Must be a string.
 	 * @param {...any} rest Extra parameters.
-	 * @returns {this} The console logger instance.
+	 * @returns {ConsoleLogger} The console logger instance.
 	 * @throws {TypeError} If the message is not a string.
 	 */
 	info(message, ...rest) {
@@ -146,10 +147,10 @@ class ConsoleLogger {
 	}
 
 	/**
-	 * @description Logs a warning message to the console if the log level is set to WARNING or higher.
+	 * Logs a warning message to the console if the log level is set to WARNING or higher.
 	 * @param {string} message The warning message. Must be a string.
 	 * @param {...any} rest Extra parameters.
-	 * @returns {this} The console logger instance.
+	 * @returns {ConsoleLogger} The console logger instance.
 	 * @throws {TypeError} If the message is not a string.
 	 */
 	warning(message, ...rest) {
@@ -165,10 +166,10 @@ class ConsoleLogger {
 	}
 
 	/**
-	 * @description Logs an error message to the console if the log level is set to ERROR or higher.
+	 * Logs an error message to the console if the log level is set to ERROR or higher.
 	 * @param {string} message The error message. Must be a string.
 	 * @param {...any} rest Extra parameters.
-	 * @returns {this} The console logger instance.
+	 * @returns {ConsoleLogger} The console logger instance.
 	 * @throws {TypeError} If the message is not a string.
 	 */
 	error(message, ...rest) {
@@ -184,10 +185,10 @@ class ConsoleLogger {
 	}
 
 	/**
-	 * @description Logs a message to the console with the same log level as the previous message.
+	 * Logs a message to the console with the same log level as the previous message.
 	 * @param {string} message The message.
 	 * @param {...any} rest Extra parameters.
-	 * @returns {this} The console logger instance.
+	 * @returns {ConsoleLogger} The console logger instance.
 	 * @throws {TypeError} If the message is not a string.
 	 */
 
