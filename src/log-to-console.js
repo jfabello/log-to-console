@@ -74,10 +74,10 @@ class ConsoleLogger {
 	 */
 	constructor(logLevel = 1) {
 		if (Number.isInteger(logLevel) === false) {
-			throw new TypeError(`New log level "${logLevel}" is not valid, it should be an integer between 0 and 4.`);
+			throw new TypeError(`New log level "${logLevel}" is not valid, it must be an integer between 0 and 4.`);
 		}
 		if (logLevel < 0 || logLevel > 4) {
-			throw new RangeError(`New log level "${logLevel}" is not valid, it should be an integer between 0 and 4.`);
+			throw new RangeError(`New log level "${logLevel}" is not valid, it must be an integer between 0 and 4.`);
 		}
 		this.#logLevel = logLevel;
 	}
@@ -98,10 +98,10 @@ class ConsoleLogger {
 	*/
 	set logLevel(newLogLevel) {
 		if (Number.isInteger(newLogLevel) === false) {
-			throw new TypeError(`New log level "${newLogLevel}" is not valid, it should be an integer between 0 and 4.`);
+			throw new TypeError(`New log level "${newLogLevel}" is not valid, it must be an integer between 0 and 4.`);
 		}
 		if (newLogLevel < 0 || newLogLevel > 4) {
-			throw new RangeError(`New log level "${newLogLevel}" is not valid, it should be an integer between 0 and 4.`);
+			throw new RangeError(`New log level "${newLogLevel}" is not valid, it must be an integer between 0 and 4.`);
 		}
 
 		this.#logLevel = newLogLevel;
@@ -118,7 +118,7 @@ class ConsoleLogger {
 	debug(message, ...rest) {
 		this.#lastLogFunction = "debug";
 		if (this.#logLevel < ConsoleLogger.DEBUG) return this;
-		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it should be a string`);
+		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it must be a string`);
 		if (rest.length === 0) {
 			console.log(chalk.bgBlueBright.black.bold("DEBUG:") + " " + message);
 		} else {
@@ -137,7 +137,7 @@ class ConsoleLogger {
 	info(message, ...rest) {
 		this.#lastLogFunction = "info";
 		if (this.#logLevel < ConsoleLogger.INFO) return this;
-		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it should be a string`);
+		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it must be a string`);
 		if (rest.length === 0) {
 			console.log(chalk.bgWhiteBright.bold.black("INFO:") + " " + message);
 		} else {
@@ -156,7 +156,7 @@ class ConsoleLogger {
 	warning(message, ...rest) {
 		this.#lastLogFunction = "warning";
 		if (this.#logLevel < ConsoleLogger.WARNING) return this;
-		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it should be a string`);
+		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it must be a string`);
 		if (rest.length === 0) {
 			console.log(chalk.bgYellowBright.black.bold("WARNING:") + " " + message);
 		} else {
@@ -175,7 +175,7 @@ class ConsoleLogger {
 	error(message, ...rest) {
 		this.#lastLogFunction = "error";
 		if (this.#logLevel < ConsoleLogger.ERROR) return this;
-		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it should be a string`);
+		if (typeof message !== "string") throw new TypeError(`The message type "${typeof message}" is not valid, it must be a string`);
 		if (rest.length === 0) {
 			console.error(chalk.bgRedBright.black.bold("ERROR:") + " " + message);
 		} else {
