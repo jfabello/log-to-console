@@ -23,6 +23,7 @@ class ConsoleLogger {
 	/**
 	 * Read-only constant representing the debug logging level (4).
 	 * @static
+	 * @readonly
 	 * @type {number}
 	 */
 	static get DEBUG() {
@@ -32,6 +33,7 @@ class ConsoleLogger {
 	/**
 	 * Read-only constant representing the information logging level (3).
 	 * @static
+	 * @readonly
 	 * @type {number}
 	 */
 	static get INFO() {
@@ -41,6 +43,7 @@ class ConsoleLogger {
 	/**
 	 * Read-only constant representing the warning logging level (2).
 	 * @static
+	 * @readonly
 	 * @type {number}
 	 */
 	static get WARNING() {
@@ -50,6 +53,7 @@ class ConsoleLogger {
 	/**
 	 * Read-only constant representing the error logging level (1).
 	 * @static
+	 * @readonly
 	 * @type {number}
 	 */
 	static get ERROR() {
@@ -59,10 +63,36 @@ class ConsoleLogger {
 	/**
 	 * Read-only constant representing the no logging level (0).
 	 * @static
+	 * @readonly
 	 * @type {number}
 	 */
 	static get NO_LOGGING() {
 		return 0;
+	}
+
+	/**
+	 * The console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
+	 * @type {number}
+	 */
+	get logLevel() {
+		return this.#logLevel;
+	}
+
+	/**
+	 * The console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
+	 * @type {number}
+	 * @throws {TypeError} If the new log level is not an integer.
+	 * @throws {RangeError} If the new log level is not between 0 and 4.
+	 */
+	set logLevel(newLogLevel) {
+		if (Number.isInteger(newLogLevel) === false) {
+			throw new TypeError(`New log level "${newLogLevel}" is not valid, it must be an integer between 0 and 4.`);
+		}
+		if (newLogLevel < 0 || newLogLevel > 4) {
+			throw new RangeError(`New log level "${newLogLevel}" is not valid, it must be an integer between 0 and 4.`);
+		}
+
+		this.#logLevel = newLogLevel;
 	}
 
 	/**
@@ -80,31 +110,6 @@ class ConsoleLogger {
 			throw new RangeError(`New log level "${logLevel}" is not valid, it must be an integer between 0 and 4.`);
 		}
 		this.#logLevel = logLevel;
-	}
-
-	/**
-	 * Gets the current console logger instance log level.
-	 * @returns {number} The current console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
-	 */
-	get logLevel() {
-		return this.#logLevel;
-	}
-
-	/**
-	 * Sets the new console logger instance log level.
-	 * @param {number} newLogLevel The desired new console logger instance log level. 4 = Debug, 3 = Info, 2 = Warning, 1 = Error, 0 = No logging.
-	 * @throws {TypeError} If the new log level is not an integer.
-	 * @throws {RangeError} If the new log level is not between 0 and 4.
-	*/
-	set logLevel(newLogLevel) {
-		if (Number.isInteger(newLogLevel) === false) {
-			throw new TypeError(`New log level "${newLogLevel}" is not valid, it must be an integer between 0 and 4.`);
-		}
-		if (newLogLevel < 0 || newLogLevel > 4) {
-			throw new RangeError(`New log level "${newLogLevel}" is not valid, it must be an integer between 0 and 4.`);
-		}
-
-		this.#logLevel = newLogLevel;
 	}
 
 	/**

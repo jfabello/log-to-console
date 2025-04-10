@@ -1,6 +1,6 @@
 {
 	"name": "@jfabello/log-to-console",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Console logger with coloring and configurable log levels for Node.js.",
 	"keywords": [
 		"log",
