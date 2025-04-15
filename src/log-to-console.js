@@ -9,7 +9,7 @@
 "use strict";
 
 // Module imports
-const chalk = require("chalk");
+import chalk from "chalk";
 
 /**
  * Console logger with coloring and configurable log levels.
@@ -221,4 +221,4 @@ class ConsoleLogger {
 	}
 }
 
-module.exports = ConsoleLogger;
+export { ConsoleLogger };
