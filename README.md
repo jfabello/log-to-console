@@ -4,6 +4,9 @@
 
 ## Table of Contents
 
+- [What is New](#what-is-new)
+  - [Version 2.0.0](#version-200)
+  - [Version 1.0.0](#version-100)
 - [Installation](#installation)
 - [Usage](#usage)
   - [Basic Usage](#basic-usage)
@@ -16,6 +19,16 @@
 - [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)
+
+## What is New
+
+### Version 2.0.0
+
+- `ConsoleLogger` is now an ES6 module. This provides better support for tools like ESLint 9 and a cleaner code syntax.
+
+### Version 1.0.0
+
+- Initial release.
 
 ## Installation
 
@@ -34,7 +47,7 @@ Here are some examples:
 ### Basic Usage
 
 ```javascript
-const ConsoleLogger = require('@jfabello/log-to-console');
+import { ConsoleLogger } from "@jfabello/log-to-console";
 
 // Creates a new console logger instance
 const logToConsole = new ConsoleLogger(ConsoleLogger.DEBUG);
@@ -47,7 +60,7 @@ logToConsole.same("This is the continuation of the info message above.");
 ### Using Multiple Message Types
 
 ```javascript
-const ConsoleLogger = require('@jfabello/log-to-console');
+import { ConsoleLogger } from "@jfabello/log-to-console";
 
 // Creates a new console logger instance
 const logToConsole = new ConsoleLogger(ConsoleLogger.DEBUG);
@@ -66,7 +79,7 @@ logToConsole.same("This is the continuation of the error message above.");
 ### Changing the Log Level
 
 ```javascript
-const ConsoleLogger = require('@jfabello/log-to-console');
+import { ConsoleLogger } from "@jfabello/log-to-console";
 
 // Creates a new console logger instance
 const logToConsole = new ConsoleLogger(ConsoleLogger.DEBUG);
