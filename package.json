@@ -1,6 +1,6 @@
 {
 	"name": "@jfabello/log-to-console",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Console logger with coloring and configurable log levels for Node.js.",
 	"keywords": [
 		"log",
@@ -20,7 +20,7 @@
 		"url": "https://github.com/jfabello/log-to-console.git"
 	},
 	"scripts": {
-		"test": "node src/log-to-console.test.js"
+		"test": "node tests/log-to-console.test.js"
 	},
 	"dependencies": {
 		"chalk": "^5"

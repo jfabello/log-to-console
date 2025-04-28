@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [What is New](#what-is-new)
+  - [Version 2.0.1](#version-201)
   - [Version 2.0.0](#version-200)
   - [Version 1.0.0](#version-100)
 - [Installation](#installation)
@@ -16,11 +17,21 @@
   - [Static Properties](#static-properties)
   - [Instance Properties](#instance-properties)
   - [Instance Methods](#instance-methods)
+    - [`constructor()`](#constructor)
+    - [`debug()`](#debug)
+    - [`info()`](#info)
+    - [`warning()`](#warning)
+    - [`error()`](#error)
+    - [`same()`](#same)
 - [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## What is New
+
+### Version 2.0.1
+
+- Code refactoring.
 
 ### Version 2.0.0
 
@@ -128,7 +139,7 @@ Console logger with coloring and configurable log levels.
 
 ### Instance Methods
 
-#### `constructor(logLevel = 1)`
+#### `constructor()`
 
 Creates a new instance of the console logger.
 
@@ -141,7 +152,7 @@ Creates a new instance of the console logger.
 - `TypeError`: If the provided log level is not an integer.
 - `RangeError`: If the provided log level is not between 0 and 4.
 
-#### `debug(message, ...rest)`
+#### `debug()`
 
 Logs a debug message to the console if the log level is set to `DEBUG` or higher.
 
@@ -158,7 +169,7 @@ Logs a debug message to the console if the log level is set to `DEBUG` or higher
 
 - `TypeError`: If the message is not a string.
 
-#### `info(message, ...rest)`
+#### `info()`
 
 Logs an information message to the console if the log level is set to `INFO` or higher.
 
@@ -175,7 +186,7 @@ Logs an information message to the console if the log level is set to `INFO` or 
 
 - `TypeError`: If the message is not a string.
 
-#### `warning(message, ...rest)`
+#### `warning()`
 
 Logs a warning message to the console if the log level is set to `WARNING` or higher.
 
@@ -192,7 +203,7 @@ Logs a warning message to the console if the log level is set to `WARNING` or hi
 
 - `TypeError`: If the message is not a string.
 
-#### `error(message, ...rest)`
+#### `error()`
 
 Logs an error message to the console if the log level is set to `ERROR` or higher.
 
@@ -209,7 +220,7 @@ Logs an error message to the console if the log level is set to `ERROR` or highe
 
 - `TypeError`: If the message is not a string.
 
-#### `same(message, ...rest)`
+#### `same()`
 
 Logs a message to the console with the same log level as the previous message.
 

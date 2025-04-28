@@ -9,7 +9,7 @@
 "use strict";
 
 // Module imports
-import { ConsoleLogger } from "./log-to-console.js";
+import { ConsoleLogger } from "../src/log-to-console.js";
 
 // Creates a new console logger instance
 const logToConsole = new ConsoleLogger(ConsoleLogger.DEBUG);
